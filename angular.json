@@ -33,6 +33,37 @@
           }
         }
       }
+    },
+    "ct-grid": {
+      "projectType": "library",
+      "root": "projects/ct-grid",
+      "sourceRoot": "projects/ct-grid/src",
+      "prefix": "ct",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ct-grid/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ct-grid/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ct-grid/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ct-grid/src/test.ts",
+            "tsConfig": "projects/ct-grid/tsconfig.spec.json",
+            "karmaConfig": "projects/ct-grid/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ct-form"

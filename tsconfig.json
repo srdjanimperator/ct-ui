@@ -7,6 +7,10 @@
       "ct-form": [
         "dist/ct-form/ct-form",
         "dist/ct-form"
+      ],
+      "ct-grid": [
+        "dist/ct-grid/ct-grid",
+        "dist/ct-grid"
       ]
     },
     "outDir": "./dist/out-tsc",
