@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ct-ct-grid',
+  selector: 'ct-grid',
   template: `
     <p>
       ct-grid works!

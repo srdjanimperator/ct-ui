@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ct-ct-form',
+  selector: 'ct-form',
   template: `
     <p>
       ct-form works!
