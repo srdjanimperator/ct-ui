@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       ct-form works!
     </p>
+    <button mat-raised-button color="primary">Primary</button>
   `,
   styles: [
   ]
