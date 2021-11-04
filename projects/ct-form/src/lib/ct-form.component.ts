@@ -3,12 +3,16 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { CtFormControlType } from './model/ct-form-control-type.enum';
 import { CtForm, CtFormControl, CtFormRow, CtFormSection } from './model/ct-form.model';
 
+type MatFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
+
 @Component({
   selector: 'ct-form',
   templateUrl: "./ct-form.component.html",
   styleUrls: [ "./ct-form.component.css" ]
 })
 export class CtFormComponent implements OnInit {
+
+  INPUT_STYLE: MatFormFieldAppearance = "legacy";
 
   @Input() ctForm: CtForm = new CtForm();
 

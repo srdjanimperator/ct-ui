@@ -39,9 +39,38 @@ export class AppComponent {
           new CtFormControl(
             "redniBroj",
             "akti.redniBroj",
-            "00002",
+            "",
             CtFormControlType.TEXT_INPUT,
             100
+          )
+        ]
+      )
+    ]
+    ),
+    new CtFormSection(
+      "akti.drugiPodaci", [
+      new CtFormRow(
+        [
+          new CtFormControl(
+            "nesto",
+            "akti.nesto",
+            "",
+            CtFormControlType.TEXT_INPUT,
+            50
+          ),
+          new CtFormControl(
+            "created",
+            "akti.created",
+            "boban.galic",
+            CtFormControlType.TEXT_INPUT,
+            33
+          ),
+          new CtFormControl(
+            "drugo",
+            "akti.drugo",
+            "",
+            CtFormControlType.TEXT_INPUT,
+            33
           )
         ]
       )

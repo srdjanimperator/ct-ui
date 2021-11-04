@@ -1,6 +1,8 @@
 .ct-form {
-  max-width: 1024px;
   padding: 30px;
+}
+.ct-form-section {
+  margin-bottom: 8px;
 }
 .ct-row {
   width: 100%;

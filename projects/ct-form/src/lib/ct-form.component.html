@@ -1,5 +1,5 @@
 <div *ngIf="loading">Loading...</div>
-<form class="ct-form" *ngIf="!loading" [formGroup]="form">
+<form class="ct-form" *ngIf="!loading" [formGroup]="form" [style.fontSize.px]="13">
   <h1 *ngIf="ctForm.title">
     {{ ctForm.title }}
   </h1>
@@ -10,7 +10,7 @@
     <div class="section-rows" fxLayout="column">
       <div *ngFor="let row of section.rows" class="ct-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
         <div *ngFor="let control of row.controls" [fxFlex]="control.widthPercent" >
-          <mat-form-field style="width: 100%;" *ngIf="control.controlType == controlTypes.TEXT_INPUT">
+          <mat-form-field style="width: 100%;" *ngIf="control.controlType == controlTypes.TEXT_INPUT" [appearance]="INPUT_STYLE">
             <mat-label>{{ control.label }}</mat-label>
             <input class="ct-control" [formControlName]="control.attributeName"
               (keyup)="onControlValueChange($event, control)" matInput />
