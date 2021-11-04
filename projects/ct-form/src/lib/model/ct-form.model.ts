@@ -24,11 +24,6 @@ export class CtFormSection {
         this.title = title;
         this.rows = rows;
     }
-
-    addRow(row: CtFormRow): CtFormSection {
-        this.rows.push(row);
-        return this;
-    }
 }
 
 export class CtFormRow {

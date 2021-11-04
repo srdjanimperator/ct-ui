@@ -1,27 +1,20 @@
 <div *ngIf="loading">Loading...</div>
 <form class="ct-form" *ngIf="!loading" [formGroup]="form">
-  <p *ngIf="ctForm.title">
+  <h1 *ngIf="ctForm.title">
     {{ ctForm.title }}
-  </p>
-  <div *ngFor="let section of ctForm.sections">
-    <div class="ct-form-section">
-      <p *ngIf="section.title">
-        {{ section.title }}
-      </p>
-      <div *ngFor="let row of section.rows">
-        <div class="ct-row">
-          <div *ngFor="let control of row.controls">
-            <div class="ct-column">
-              <div *ngIf="control.controlType == controlTypes.TEXT_INPUT">
-                <mat-form-field>
-                  <mat-label>{{ control.label }}</mat-label>
-                  <input [formControlName]="control.attributeName" (keyup)="onControlValueChange($event, control)"
-                    matInput />
-                </mat-form-field>
-                <!-- <input (change)="onControlValueChange('vrednost', control)" type="text"> -->
-              </div>
-            </div>
-          </div>
+  </h1>
+  <div *ngFor="let section of ctForm.sections" class="ct-form-section">
+    <h3 *ngIf="section.title">
+      {{ section.title }}
+    </h3>
+    <div class="section-rows" fxLayout="column">
+      <div *ngFor="let row of section.rows" class="ct-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div *ngFor="let control of row.controls" [fxFlex]="control.widthPercent" >
+          <mat-form-field style="width: 100%;" *ngIf="control.controlType == controlTypes.TEXT_INPUT">
+            <mat-label>{{ control.label }}</mat-label>
+            <input class="ct-control" [formControlName]="control.attributeName"
+              (keyup)="onControlValueChange($event, control)" matInput />
+          </mat-form-field>
         </div>
       </div>
     </div>

@@ -11,11 +11,11 @@ export class AppComponent {
 
   controlTypes = CtFormControlType;
 
-  ctForm: CtForm = new CtForm(this.title).addSection(
-    new CtFormSection()
-      .addRow(
-        new CtFormRow()
-        .addControl(
+  ctForm: CtForm = new CtForm(this.title, [
+    new CtFormSection(
+      "akti.osnovniPodaci", [
+      new CtFormRow(
+        [
           new CtFormControl(
             "brojPredmeta",
             "akti.brojPredmeta",
@@ -23,9 +23,7 @@ export class AppComponent {
             CtFormControlType.TEXT_INPUT,
             50,
             this.onBrojPredmetaChange
-          )
-        )
-        .addControl(
+          ),
           new CtFormControl(
             "objectName",
             "akti.objectName",
@@ -34,21 +32,22 @@ export class AppComponent {
             50,
             this.onObjectNameChange
           )
-        )
-      )
-      .addRow(
-        new CtFormRow()
-          .addControl(
-            new CtFormControl(
-              "redniBroj",
-              "akti.redniBroj",
-              "00002",
-              CtFormControlType.TEXT_INPUT,
-              100
-            )
+        ]
+      ),
+      new CtFormRow(
+        [
+          new CtFormControl(
+            "redniBroj",
+            "akti.redniBroj",
+            "00002",
+            CtFormControlType.TEXT_INPUT,
+            100
           )
+        ]
       )
-  )
+    ]
+    )
+  ])
 
   onBrojPredmetaChange(newValue: any): void {
     console.log("Broj predmeta je promenjen u: " + newValue)
