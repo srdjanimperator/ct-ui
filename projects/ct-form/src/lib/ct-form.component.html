@@ -1,8 +1,8 @@
 <div *ngIf="loading">Loading...</div>
-<form class="ct-form" *ngIf="!loading" [formGroup]="form" [style.fontSize.px]="13">
-  <h1 *ngIf="ctForm.title">
+<form class="ct-form" *ngIf="!loading" [formGroup]="form" [style.fontSize.px]="13" [style.maxWidth]="ctForm?.maxWidth">
+  <h2 class="title" *ngIf="ctForm.title">
     {{ ctForm.title }}
-  </h1>
+  </h2>
   <div *ngFor="let section of ctForm.sections" class="ct-form-section">
     <h3 *ngIf="section.title">
       {{ section.title }}

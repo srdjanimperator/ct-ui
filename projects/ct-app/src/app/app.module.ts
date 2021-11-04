@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 
 import { CtFormModule } from 'ct-form';
 import { CtGridModule } from 'ct-grid';
+import { AktCreateComponent } from './akt-create/akt-create.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AktCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -3,10 +3,12 @@ import { CtFormControlType } from "./ct-form-control-type.enum";
 export class CtForm {
     title: string | null;
     sections: CtFormSection[] = [];
+    maxWidth: string;
 
-    constructor(title: string | null = null, sections: CtFormSection[] = []) {
+    constructor(title: string | null = null, sections: CtFormSection[] = [], maxWidth = "1024px") {
         this.title = title;
         this.sections = sections;
+        this.maxWidth = maxWidth;
     }
 
     addSection(ctFormSection: CtFormSection): CtForm {
