@@ -15,7 +15,7 @@ import { CtGridModule } from 'ct-grid';
     BrowserModule,
     AppRoutingModule,
     CtGridModule,
-    CtFormModule
+    CtFormModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

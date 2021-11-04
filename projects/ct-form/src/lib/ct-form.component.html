@@ -1,0 +1,30 @@
+<div *ngIf="loading">Loading...</div>
+<form class="ct-form" *ngIf="!loading" [formGroup]="form">
+  <p *ngIf="ctForm.title">
+    {{ ctForm.title }}
+  </p>
+  <div *ngFor="let section of ctForm.sections">
+    <div class="ct-form-section">
+      <p *ngIf="section.title">
+        {{ section.title }}
+      </p>
+      <div *ngFor="let row of section.rows">
+        <div class="ct-row">
+          <div *ngFor="let control of row.controls">
+            <div class="ct-column">
+              <div *ngIf="control.controlType == controlTypes.TEXT_INPUT">
+                <mat-form-field>
+                  <mat-label>{{ control.label }}</mat-label>
+                  <input [formControlName]="control.attributeName" (keyup)="onControlValueChange($event, control)"
+                    matInput />
+                </mat-form-field>
+                <!-- <input (change)="onControlValueChange('vrednost', control)" type="text"> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button mat-raised-button color="primary">Primary</button>
+</form>
