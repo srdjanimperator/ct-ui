@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CtFormControlType } from './model/ct-form-control-type.enum';
-import { CtForm, CtFormControl, CtFormRow, CtFormSection } from './model/ct-form.model';
+import { CtForm, CtFormControl, CtFormRow, CtFormSection, CtFormAction } from './model/ct-form.model';
 
 type MatFormFieldAppearance = 'legacy' | 'standard' | 'fill' | 'outline';
 
@@ -45,5 +45,9 @@ export class CtFormComponent implements OnInit {
     if (control.onChangeCallbackFn != null) {
       control.onChangeCallbackFn(event.target.value);
     }
+  }
+
+  onActionClicked(event: any, btn: CtFormAction) {
+    btn.onClickHandlerFn(this.form.value)
   }
 }

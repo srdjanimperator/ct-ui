@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CtFormControlType, CtFormRow, CtForm, CtFormControl, CtFormSection } from 'ct-form';
+import { CtFormControlType, CtFormRow, CtForm, CtFormControl, CtFormSection, CtFormAction } from 'ct-form';
 
 @Component({
   selector: 'app-akt-create',
@@ -77,7 +77,16 @@ export class AktCreateComponent implements OnInit {
       )
     ]
     )
-  ])
+  ],
+    [
+      new CtFormAction("Zavedi", (data: any) => {
+        console.log("ZAVEDI CLICKED!")
+      }, "primary"),
+      new CtFormAction("Otkazi", (data: any) => {
+        console.log("IDEMO NAZAD!")
+      }, "secondary")
+    ]
+  )
 
   ngOnInit(): void {
 

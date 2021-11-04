@@ -5,10 +5,13 @@ export class CtForm {
     sections: CtFormSection[] = [];
     maxWidth: string;
 
-    constructor(title: string | null = null, sections: CtFormSection[] = [], maxWidth = "1024px") {
+    actions: CtFormAction[] = [];
+
+    constructor(title: string | null = null, sections: CtFormSection[] = [], actions: CtFormAction[] = [], maxWidth: string = "1024px") {
         this.title = title;
         this.sections = sections;
         this.maxWidth = maxWidth;
+        this.actions = actions;
     }
 
     addSection(ctFormSection: CtFormSection): CtForm {
@@ -65,5 +68,21 @@ export class CtFormControl {
         this.widthPercent = widthPercent;
 
         this.onChangeCallbackFn = onChangeCallbackFn;
+    }
+}
+
+interface CtOnActionClickedCallback {
+    (data: any): void
+}
+
+export class CtFormAction {
+    label: string;
+    color: string = "primary";
+    onClickHandlerFn: CtOnActionClickedCallback;
+
+    constructor(label: string, onClickHandlerFn: CtOnActionClickedCallback, color: string = "primary") {
+        this.label = label;
+        this.onClickHandlerFn = onClickHandlerFn;
+        this.color = color;
     }
 }

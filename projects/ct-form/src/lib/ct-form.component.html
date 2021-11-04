@@ -19,5 +19,8 @@
       </div>
     </div>
   </div>
-  <button mat-raised-button color="primary">Primary</button>
+  <button (click)="onActionClicked($event, action)" *ngFor="let action of ctForm.actions" class="ct-form-button" mat-raised-button color="primary">
+    {{ action.label }}
+  </button>
+
 </form>
